@@ -10,31 +10,35 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var Transscriptor = (function () {
-    function Transscriptor() {
-        _classCallCheck(this, Transscriptor);
+var Transcriptor = (function () {
+    function Transcriptor() {
+        _classCallCheck(this, Transcriptor);
     }
 
-    _createClass(Transscriptor, [{
+    _createClass(Transcriptor, [{
         key: 'toRna',
         value: function toRna(str) {
-            var transscript = "";
+            var chars = [].concat(_toConsumableArray(str)); // [ "f", "o", "o" ]
+            var transcript = "";
             var rna = new Map();
             rna.set('C', 'G');
             rna.set('G', 'C');
             rna.set('T', 'A');
             rna.set('A', 'U');
-            var chars = [].concat(_toConsumableArray(str)); // [ "f", "o", "o" ]
             chars.forEach(function (currentValue) {
                 console.log('get: ', rna.get(currentValue));
-                transscript = rna.get(currentValue);
+                if (rna.get(currentValue) === undefined) {
+                    throw new Error('Invalid input DNA.');
+                } else {
+                    transcript = transcript + rna.get(currentValue);
+                }
             });
-            return transscript;
+            return transcript;
         }
     }]);
 
-    return Transscriptor;
+    return Transcriptor;
 })();
 
-exports['default'] = Transscriptor;
+exports['default'] = Transcriptor;
 module.exports = exports['default'];
