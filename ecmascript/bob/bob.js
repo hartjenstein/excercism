@@ -5,11 +5,28 @@
 
 class Bob {
   hey(message) {
-    //
-    // YOUR CODE GOES HERE
-    //
+  let result = "";
+      if(message === message.toUpperCase()) {
+      	result = 'Whoa, chill out!';	
+      } else if(message[message.length -1] === "?"){
+        result = "Sure.";
+      } else if(message[message.length -1] === ""){
+        result = "Fine. Be that way!";  
+      /*} else if (this.hasNumbers(message)){
+        result = 'Whatever.' */
+      } else if (/^[0-9,.]*$/.test(message)){
+        result = 'Whatever.'; 
+      } else if (/\d/.test(message)){
+        result = "Sure."; 
+      } else {
+        result = 'Whatever.';
+      }
+      return result;
   }
-}
-
+ /* hasNumbers(message){
+    return /\d/.test(message)
+  }*/
+  
+};
 export default Bob;
 

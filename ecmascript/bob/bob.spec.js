@@ -9,42 +9,42 @@ describe('Bob', () => {
     expect(result).toEqual('Whatever.');
   });
 
-  xit('shouting', () => {
+  it('shouting', () => {
     const result = bob.hey('WATCH OUT!');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xit('asking a question', () => {
+  it('asking a question', () => {
     const result = bob.hey('Does this cryogenic chamber make me look fat?');
     expect(result).toEqual('Sure.');
   });
 
-  xit('talking forcefully', () => {
+  it('talking forcefully', () => {
     const result = bob.hey("Let's go make out behind the gym!");
     expect(result).toEqual('Whatever.');
   });
 
-  xit('using acronyms in regular speech', () => {
+  it('using acronyms in regular speech', () => {
     const result = bob.hey("It's OK if you don't want to go to the DMV.");
     expect(result).toEqual('Whatever.');
   });
 
-  xit('forceful questions', () => {
+  it('forceful questions', () => {
     const result = bob.hey('WHAT THE HELL WERE YOU THINKING?');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xit('shouting numbers', () => {
+  it('shouting numbers', () => {
     const result = bob.hey('1, 2, 3 GO!');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xit('only numbers', () => {
+  it('only numbers', () => {
     const result = bob.hey('1, 2, 3');
     expect(result).toEqual('Whatever.');
   });
 
-  xit('question with only numbers', () => {
+  it('question with only numbers', () => {
     const result = bob.hey('4?');
     expect(result).toEqual('Sure.');
   });
