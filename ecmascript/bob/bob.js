@@ -4,9 +4,12 @@
 //
 
 class Bob {
+
   hey(message) {
   let result = "";
-      if(message === message.toUpperCase()) {
+      if(message === message.toUpperCase() && !message.includes(parseFloat(message))) {
+      	result = 'Whoa, chill out!';	
+      }  else if(message === message.toUpperCase() && message.includes(parseFloat(message))) {
       	result = 'Whoa, chill out!';	
       } else if(message[message.length -1] === "?"){
         result = "Sure.";
@@ -16,8 +19,6 @@ class Bob {
         result = 'Whatever.' */
       } else if (/^[0-9,.]*$/.test(message)){
         result = 'Whatever.'; 
-      } else if (/\d/.test(message)){
-        result = "Sure."; 
       } else {
         result = 'Whatever.';
       }
